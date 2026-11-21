@@ -30,6 +30,11 @@ with st.sidebar:
                 except Exception as e:
                     st.error(f"Error reading PDF: {e}")
 
+    if st.session_state.get("messages"):
+        if st.button("🗑️ Clear Chat History"):
+            st.session_state.messages = []
+            st.experimental_rerun()
+
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
