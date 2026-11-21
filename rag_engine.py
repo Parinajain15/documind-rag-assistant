@@ -64,7 +64,7 @@ class DocumentRAGIndex:
 
         results = []
         for idx in top_indices:
-            if combined[idx] > 0.01:
+            if combined[idx] > 0.09:
                 results.append({
                     "page": self.chunks[idx]["page"],
                     "text": self.chunks[idx]["text"],
